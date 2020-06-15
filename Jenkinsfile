@@ -30,17 +30,14 @@
 //              }
 // }
 
-
+     wrap([$class: 'BuildUser']) {
+           def user = env.BUILD_USER_ID
+        }
 pipeline {
     agent { docker { image 'golang' } }
     environment {
         GOCACHE = "/tmp"
 
-    }
-    script {
-        wrap([$class: 'BuildUser']) {
-           def user = env.BUILD_USER_ID
-        }
     }
     stages {
         stage('build') {
