@@ -1,5 +1,5 @@
 node() {
-  def root = tool name: 'Go 1.14', type: 'go'
+  def root = tool name: 'Go 1.14.4', type: 'go'
 
   stage('Preparation') {
     checkout scm
