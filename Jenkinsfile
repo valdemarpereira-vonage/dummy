@@ -30,9 +30,9 @@
 //              }
 // }
 
-     wrap([$class: 'BuildUser']) {
-           def user = env.BUILD_USER_ID
-        }
+//      wrap([$class: 'BuildUser']) {
+//            def user = env.BUILD_USER_ID
+//         }
 pipeline {
     agent { docker { image 'golang' } }
     environment {
@@ -43,6 +43,9 @@ pipeline {
         stage('build') {
             steps {
                 sh '''
+                    echo "${BUILD_USER}"
+                          echo "${BUILD_USER_ID}"
+                          echo "${BUILD_USER_EMAIL}"
                    ls
                    go version
                    go test -v
