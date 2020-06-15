@@ -16,6 +16,15 @@ ws("${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}/") {
                         }
                 }
             }
+
+
+             post {
+                    always {
+                        script {
+                            echo "Post Script"
+                        }
+                    }
+                }
 }
 
 
