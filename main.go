@@ -6,6 +6,9 @@ import (
 	sample "github.com/elliotforbes/test-package"
 )
 
+func Hello() string {
+	return "Bla"
+}
 func main() {
 	fmt.Println("Hello World")
 	sample.MySampleFunc()
