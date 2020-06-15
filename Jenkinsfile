@@ -24,7 +24,8 @@ pipeline {
                             echo "Post Script"
                         }
                     }
-                }
+             }
+    }
 }
 
 
