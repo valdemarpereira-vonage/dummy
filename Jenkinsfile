@@ -42,6 +42,12 @@ pipeline {
     stages {
         stage('build') {
             steps {
+            wrap([$class: 'BuildUser']) {
+                  echo "${BUILD_USER}"
+                  echo "${BUILD_USER_ID}"
+                  echo "${BUILD_USER_EMAIL}"
+                }
+
                 sh '''
                     echo "${BUILD_USER}"
                           echo "${BUILD_USER_ID}"
