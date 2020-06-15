@@ -6,6 +6,7 @@ pipeline {
                 sh '''
                    go version
                    go test -v
+                   '''
              }
         }
     }
