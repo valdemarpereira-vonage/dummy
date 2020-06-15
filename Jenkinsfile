@@ -16,6 +16,7 @@ pipeline {
                         }
                 }
             }
+    }
 
 
              post {
@@ -25,7 +26,6 @@ pipeline {
                         }
                     }
              }
-    }
 }
 
 
