@@ -1,18 +1,14 @@
-trigger:
-  - master
+name: providerlib
 
-pool:
-  vmImage: 'ubuntu-latest'
-  
-steps:  
-  - task: UseGitVersion@5
-    displayName: Determine Version Number
-    inputs:
-      versionSpec: '5.x'
-  - task: Bash@3
-    displayName: 'Set version number in package.json'
-    inputs:
-      targetType: 'inline'
-      script: sed -i "s/0.0.1/$GITVERSIONNUMBER/g" package.json
-    env:
-      GITVERSIONNUMBER: $(GitVersion.SemVer)
+on:
+  push:
+    branches: [ matern ]
+
+jobs:
+  lint_and_build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0.9.7
+        with:
+          versionSpec: '5.5.0'
