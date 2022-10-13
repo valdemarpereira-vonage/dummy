@@ -2,7 +2,7 @@ name: providerlib
 
 on:
   push:
-    branches: [ matern ]
+    branches: [ master ]
 
 jobs:
   lint_and_build:
