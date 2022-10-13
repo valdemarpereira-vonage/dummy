@@ -5,8 +5,10 @@ on:
     branches: [ master ]
 
 jobs:
-  lint_and_build:
+  calculate-version:
     runs-on: ubuntu-latest
+    outputs:
+      semVer: ${{ steps.gitversion.outputs.semVer }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -21,3 +23,13 @@ jobs:
         with:
           useConfigFile: true
           additionalArguments: '/showConfig'
+  display-semver:
+    name: Display Semantic Version
+    runs-on: ubuntu-latest
+    needs: calculate-version
+    env:
+      SEMVER: ${{ needs.calculate-version.outputs.semVer }}
+    steps:
+      - name: Display version
+        run: |
+          echo SemVer: $SEMVER
