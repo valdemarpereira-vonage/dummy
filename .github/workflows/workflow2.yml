@@ -10,10 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-#      - uses: actions/checkout@v1
-#
-#      - name: Fetch all history for all tags and branches
-#        run: git fetch --prune
+
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -58,3 +55,6 @@ jobs:
           echo "CommitsSinceVersionSource: ${{ steps.gitversion.outputs.commitsSinceVersionSource }}"
           echo "CommitsSinceVersionSourcePadded: ${{ steps.gitversion.outputs.commitsSinceVersionSourcePadded }}"
           echo "CommitDate: ${{ steps.gitversion.outputs.commitDate }}"
+      - name: Display version
+        run: |
+          echo "SemVer: $GITVERSION_SEMVER"
