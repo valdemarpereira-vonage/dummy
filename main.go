@@ -10,6 +10,6 @@ func Hello() string {
 	return "Bla"
 }
 func main() {
-	fmt.Println("Hello Worlds")
+	fmt.Println("Hello Worldss")
 	sample.MySampleFunc()
 }
