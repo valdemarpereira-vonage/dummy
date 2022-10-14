@@ -1,6 +1,12 @@
+#mode: Mainline
+#branches:
+#  master:
+#    regex: ^latest$
+#  pull-request:
+#    tag: pr
+
 mode: Mainline
-branches:
-  master:
-    regex: ^latest$
-  pull-request:
-    tag: pr
+branches: {}
+ignore:
+  sha: []
+merge-message-formats: {}
