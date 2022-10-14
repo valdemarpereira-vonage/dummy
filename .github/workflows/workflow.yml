@@ -26,6 +26,10 @@ jobs:
           useConfigFile: true
           additionalArguments: '/showConfig'
 
+      - name: Display version
+          run: |
+            echo "SemVer: $GITVERSION_SEMVER"
+
   display-semver:
     name: Display Semantic Version
     runs-on: ubuntu-latest
